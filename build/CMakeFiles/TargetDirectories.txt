@@ -1,0 +1,5 @@
+C:/Projectsfml/Strateg/Strateg/build/CMakeFiles/MyProject.dir
+C:/Projectsfml/Strateg/Strateg/build/CMakeFiles/MyProjectTests.dir
+C:/Projectsfml/Strateg/Strateg/build/CMakeFiles/test.dir
+C:/Projectsfml/Strateg/Strateg/build/CMakeFiles/edit_cache.dir
+C:/Projectsfml/Strateg/Strateg/build/CMakeFiles/rebuild_cache.dir
