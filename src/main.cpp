@@ -50,7 +50,7 @@ int main() {
   sf::Font font;
   if (!font.loadFromFile(
           "CyrilicOld.TTF")) { 
-    std::cerr << "������ �������� ������!" << std::endl;
+    std::cerr << "Error with font" << std::endl;
     return 1;
   }
   sf::Text gameOverText;
@@ -63,7 +63,7 @@ int main() {
 
   sf::Text turnText;
   turnText.setFont(font);
-  turnText.setString("���: Player 1");
+  turnText.setString("Motion: Player 1");
   turnText.setCharacterSize(50);
   turnText.setFillColor(sf::Color::Black);
   sf::FloatRect textRect = turnText.getLocalBounds();
@@ -132,7 +132,7 @@ int main() {
                     }
                     break;
                   } else {
-                    std::cout << "�ell is Occupied!" << std::endl;
+                    std::cout << "Cell is Occupied!" << std::endl;
                   }
                 } else if (event.mouseButton.button ==
                            sf::Mouse::Right) { 
@@ -313,15 +313,15 @@ int main() {
       finishButton.draw(window);
     }
     if (Player1move) {
-      turnText.setString("���: Player 1");
+      turnText.setString("Motion: Player 1");
     } else {
-      turnText.setString("���: Player 2");
+      turnText.setString("Motion: Player 2");
     }
     if (Finish) {
       if (NPC_Player2.size() == 0) {
-        gameOverText.setString("�������: Player 1");
+        gameOverText.setString("Win: Player 1");
       } else if (NPC_Player1.size() == 0) {
-        gameOverText.setString("�������: Player 2");
+        gameOverText.setString("Win: Player 2");
       }
       window.draw(gameOverText);
     }
