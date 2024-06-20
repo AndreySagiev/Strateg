@@ -123,8 +123,8 @@ private:
   sf::Color fillColor;
   sf::Color outlineColor;
   float outlineThickness;
-  bool occupied; //  ������ �� ������
-  bool tall; //  �������� �� ������ "�������"
+  bool occupied;
+  bool tall;
 };
 
 /*!
