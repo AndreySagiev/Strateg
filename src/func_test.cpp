@@ -26,6 +26,7 @@ TEST_CASE("Circle Class: IsClicked Method") {
     circle2.setPosition(100, 150);
 
     CHECK(circle2.isClicked(Vector2i(140, 190), 50));
+    CHECK(circle2.isClicked(Vector2i(200, 200), 50));
 }
 
 TEST_CASE("Circle Class: Occupied and Tall Properties") {
