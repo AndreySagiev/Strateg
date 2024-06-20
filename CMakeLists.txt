@@ -1,21 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
-project(SFML-Project)
-include_directories(
-    ${CMAKE_SOURCE_DIR}/SFML/include
-)
-link_directories(
-    ${CMAKE_SOURCE_DIR}/SFML/lib
-)
-set(CMAKE_CXX_COMPILER g++)
-set(CMAKE_CXX_FLAGS "-Wall -g")
-add_executable(SFML-Project main.cpp)
-target_link_libraries(SFML-Project
-    sfml-graphics
-    sfml-window
-    sfml-system
-    sfml-network
-    sfml-audio
-)
-add_executable(main_test main_test.cpp main.cpp)
+project(MyProject)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(SFML_DIR "C:/Program Files/SFML-2.6.1/lib/cmake/SFML")
+
+find_package(SFML 2.6 COMPONENTS system window graphics REQUIRED)
+
+include_directories(${PROJECT_SOURCE_DIR}/include ${SFML_INCLUDE_DIR})
+
+add_executable(MyProject src/main.cpp)
+
+target_link_libraries(MyProject sfml-system sfml-window sfml-graphics)
+
+add_executable(MyProjectTests src/func_test.cpp)
+
+target_link_libraries(MyProjectTests sfml-system sfml-window sfml-graphics)
+
 enable_testing()
-add_test(NAME main_test COMMAND main_test --force-colors -d)
+add_test(NAME MyProjectTests COMMAND MyProjectTests)
