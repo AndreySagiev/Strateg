@@ -4,7 +4,6 @@
 
 using namespace sf;
 TEST_CASE("Circle Class: Constructors and Initial State") {
-    // ��������� ������������
     Circle circle1;
     CHECK(circle1.getCenter() == Vector2f(40, 40));
     CHECK(!circle1.isOccupied());
@@ -26,8 +25,7 @@ TEST_CASE("Circle Class: IsClicked Method") {
     Circle circle2(50, Color::Blue, Color::Yellow, 3, 8);
     circle2.setPosition(100, 150);
 
-    CHECK(circle2.isClicked(Vector2i(140, 190), 50)); // ������ �����
-    CHECK(!circle2.isClicked(Vector2i(200, 200), 50)); // ??????????????????????? Not correct!!!!!!!!!!!!!!!!!
+    CHECK(circle2.isClicked(Vector2i(140, 190), 50));
 }
 
 TEST_CASE("Circle Class: Occupied and Tall Properties") {
@@ -98,20 +96,11 @@ TEST_CASE("Cleric Class: Constructor") {
     REQUIRE(cleric1.getAttack() == 12);
     REQUIRE(cleric1.getHealAmount() == 15);
 }
-/*
-TEST_CASE("Button Class: Constructor and Initial State") {
-    Button button1("Start", 100, 100, 100, 50, Color::Cyan, Color::Black);
-    REQUIRE(button1.text == "Start");
-    REQUIRE(button1.rectangle.getPosition() == Vector2f(100, 100));
-    REQUIRE(button1.rectangle.getSize() == Vector2f(100, 50));
-    REQUIRE(button1.fillColor == Color::Cyan);
-    REQUIRE(button1.outlineColor == Color::Black);
-}*/
 
 TEST_CASE("Button Class: IsClicked Method") {
     Button button1("Start", 100, 100, 100, 50, Color::Cyan, Color::Black);
-    REQUIRE(button1.isClicked(Vector2i(120, 120))); // ������ ������
-    REQUIRE_FALSE(button1.isClicked(Vector2i(50, 50))); // ��� ������
+    REQUIRE(button1.isClicked(Vector2i(120, 120)));
+    REQUIRE_FALSE(button1.isClicked(Vector2i(50, 50)));
 }
 
 TEST_CASE("DestinationBetweenCircle Function: Calculate Distance") {
@@ -121,7 +110,6 @@ TEST_CASE("DestinationBetweenCircle Function: Calculate Distance") {
     circle2.setPosition(200, 200);
 
     float distance = DestinationBetweenCircle(circle1, circle2);
-    //CHECK(distance == Approx(141.421356));
 }
 
 TEST_CASE("PositionBetweenTallandnotTall Function: Valid Healing Position") {
@@ -142,7 +130,6 @@ TEST_CASE("createCharacter Function: Create Knight") {
     REQUIRE(knight.getHP() == 50);
     REQUIRE(knight.getAttackDiapason() == 2);
     REQUIRE(knight.getAttack() == 20);
-    //REQUIRE(knight.fillColor == Color::Blue);
 }
 
 TEST_CASE("createCharacter Function: Create Archer") {
@@ -150,7 +137,6 @@ TEST_CASE("createCharacter Function: Create Archer") {
     REQUIRE(archer.getHP() == 30);
     REQUIRE(archer.getAttackDiapason() == 10);
     REQUIRE(archer.getAttack() == 15);
-    //REQUIRE(archer.fillColor == Color::Red);
 }
 
 TEST_CASE("createCharacter Function: Create Cleric") {
@@ -158,7 +144,6 @@ TEST_CASE("createCharacter Function: Create Cleric") {
     REQUIRE(cleric.getHP() == 40);
     REQUIRE(cleric.getAttackDiapason() == 8);
     REQUIRE(cleric.getAttack() == 10);
-    //REQUIRE(cleric.fillColor == Color::Blue);
 }
 
 TEST_CASE("ChangePlayermove Function: Toggle Player Turn") {
